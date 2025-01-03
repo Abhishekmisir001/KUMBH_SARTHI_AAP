@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,7 +10,7 @@ class Restaurant {
   final String contact;
   final String imageUrl;
   final double rating;
-  final String websiteUrl; // Added the website URL field
+  final String websiteUrl; 
 
   Restaurant({
     required this.name,
@@ -18,7 +18,7 @@ class Restaurant {
     required this.contact,
     required this.imageUrl,
     required this.rating,
-    required this.websiteUrl, // Add website URL in constructor
+    required this.websiteUrl,
   });
 }
 
@@ -30,7 +30,7 @@ class RestaurantsScreen extends StatelessWidget {
       contact: '898674978',
       imageUrl: 'assets/restaurant1.jpg',
       rating: 4.5,
-      websiteUrl: 'https://www.thegreenplate.com', // Add website URL
+      websiteUrl: 'https://www.thegreenplate.com', 
     ),
     Restaurant(
       name: 'Spice Junction',
@@ -38,7 +38,7 @@ class RestaurantsScreen extends StatelessWidget {
       contact: '8795869098',
       imageUrl: 'assets/restaurant5.jpg',
       rating: 4.2,
-      websiteUrl: 'https://www.spicejunction.com', // Add website URL
+      websiteUrl: 'https://www.spicejunction.com',
     ),
     Restaurant(
       name: 'Ocean Breeze',
@@ -46,7 +46,7 @@ class RestaurantsScreen extends StatelessWidget {
       contact: '8769409876',
       imageUrl: 'assets/restaurant4.jpg',
       rating: 4.8,
-      websiteUrl: 'https://www.oceanbreeze.com', // Add website URL
+      websiteUrl: 'https://www.oceanbreeze.com', 
     ),
     Restaurant(
       name: 'Misthi Pan Bhandaar',
@@ -55,7 +55,7 @@ class RestaurantsScreen extends StatelessWidget {
       imageUrl: 'assets/r1.png',
       rating: 4.8,
       websiteUrl:
-          'https://www.zomato.com/allahabad/misthi-bites-naini', // Add website URL
+          'https://www.zomato.com/allahabad/misthi-bites-naini',
     ),
     Restaurant(
       name: 'El Chico Plastic',
@@ -63,9 +63,9 @@ class RestaurantsScreen extends StatelessWidget {
       contact: '9415128975',
       imageUrl: 'assets/r2.jpg',
       rating: 4.8,
-      websiteUrl: 'https://elchico.in/', // Add website URL
+      websiteUrl: 'https://elchico.in/', 
     ),
-    // Add more restaurants as needed
+  
   ];
 
    RestaurantsScreen({super.key});
@@ -93,7 +93,7 @@ class RestaurantCard extends StatelessWidget {
 
   const RestaurantCard({super.key, required this.restaurant});
 
-  // Function to launch the URL
+  // launch the URL
   Future<void> _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -192,7 +192,7 @@ class RestaurantCard extends StatelessWidget {
                   ),
                 ),
               ),
-              // Rating Animation
+              
               Positioned(
                 top: 10,
                 right: 10,
