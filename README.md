@@ -1,2 +1,16 @@
-# KUMBH_SARTHI_AAP
-Kumbh Sarthi is a comprehensive mobile application designed to enhance the safety, convenience, and overall experience of attendees at the Kumbh Mela, one of the largest religious gatherings in the world. Key Features: Emergency Assistance: Instant access to emergency services such as police, medical help, and lost & found support. Real-Time Updates: A creative event calendar displaying upcoming events, festivals, and Hindu calendar dates with animations and visual appeal. Interactive Map: Navigate the Kumbh Mela area with a detailed map showcasing sectors, police booths, medical facilities, hotels, and other essential services. Nearby Services: Find services like restaurants, ATMs, and transport facilities easily. Volunteer Support: Connect with on-ground volunteers for assistance. Language Support: Multilingual support for better accessibility. Accessibility Features: Designed to be inclusive and accessible for all users. Push Notifications: Stay updated with important announcements and safety alerts. Lost & Found: Simplify the process of finding lost items or people. Virtual Tour: Explore the event area through a virtual experience. Technology Stack: Framework: Flutter Programming Language: Dart Backend: Firebase (planned integration) Vision: Kumbh Sarthi aims to be the ultimate companion for Kumbh Mela attendees, ensuring safety, convenience, and a hassle-free experience.  Contributions, suggestions, and feedback are welcome!
+# kumbh_sarthi
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
