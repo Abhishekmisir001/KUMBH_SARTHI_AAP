@@ -1,8 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
 import 'package:kumbh_sarthi/login.dart';
-import 'package:provider/provider.dart'; // Highlight: Import Provider package
+import 'package:provider/provider.dart'; 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'theme_manager.dart'; // Highlight: Import ThemeManage
+import 'theme_manager.dart'; 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,18 +18,18 @@ import 'package:kumbh_sarthi/realtime.dart';
 import 'package:kumbh_sarthi/report.dart';
 import 'package:kumbh_sarthi/setting.dart';
 import 'package:kumbh_sarthi/sos.dart';
-// ignore: unused_import
+
 import 'firebase_auth.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensure bindings are initialized
+  WidgetsFlutterBinding.ensureInitialized(); // bindings  initialized
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(
     ChangeNotifierProvider(
-      create: (context) => ThemeManager(), // Provide ThemeManager instance
+      create: (context) => ThemeManager(), //  ThemeManager instance
       child: const KumbhSarthiApp(),
     ),
   );
@@ -44,10 +44,10 @@ class KumbhSarthiApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Kumbh Sarthi',
-      theme: ThemeData.light(), // Light theme configuration
-      darkTheme: ThemeData.dark(), // Dark theme configuration
-      themeMode: themeManager.themeMode, // Dynamically switch theme
-      home: const WelcomeScreen(), // Start with WelcomeScreen
+      theme: ThemeData.light(), 
+      darkTheme: ThemeData.dark(), 
+      themeMode: themeManager.themeMode, 
+      home: const WelcomeScreen(), 
     );
   }
 }
@@ -140,7 +140,7 @@ class SignupScreen extends StatelessWidget {
     final phoneController = TextEditingController();
     final passwordController = TextEditingController();
 
-    // Function to handle user sign-up and Firestore data storage
+    // handle user sign-up and Firestore data storage
     void signupUser(
         String name, String email, String password, String phone) async {
       if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
@@ -159,7 +159,7 @@ class SignupScreen extends StatelessWidget {
       }
 
       try {
-        // Create user with email and password
+      
         UserCredential userCredential =
             await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email,
@@ -169,7 +169,7 @@ class SignupScreen extends StatelessWidget {
         // Get the user ID (UID) after successful sign-up
         String uid = userCredential.user!.uid;
 
-        // Save additional data (name, phone, email) in Firestore
+        // Saving additional data (name, phone, email) in Firestore
         await FirebaseFirestore.instance.collection('users').doc(uid).set({
           'name': name,
           'phone': phone,
@@ -177,7 +177,7 @@ class SignupScreen extends StatelessWidget {
           'createdAt': FieldValue.serverTimestamp(),
         });
 
-        // Save login status and user details in SharedPreferences
+        // Saving login status and user details in SharedPreferences
         final SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setBool('isLoggedIn', true);
         await prefs.setString('userName', name);
@@ -196,7 +196,7 @@ class SignupScreen extends StatelessWidget {
           (Route<dynamic> route) => false, // Clear all routes from the stack
         );
 
-        // Show success message
+        // Showing success message
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Signup successful!')),
         );
@@ -217,7 +217,7 @@ class SignupScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/sign2.jpg'), // Ensure the path is correct
+                image: AssetImage('assets/sign2.jpg'), 
                 fit: BoxFit.cover,
               ),
             ),
@@ -382,10 +382,10 @@ class _MainScreenState extends State<MainScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => ProfileScreen(
-              name: userName, // Replace with the actual user name variable
-              email: userEmail, // Replace with the actual user email variable
-              phone: userPhone, // Replace with the actual user phone variable
-              profilePictureUrl: null, userId: '', // Optional: add the profile picture URL
+              name: userName, 
+              email: userEmail, 
+              phone: userPhone, 
+              profilePictureUrl: null, userId: '', 
             ),
           ),
         );
@@ -407,13 +407,13 @@ class _MainScreenState extends State<MainScreen> {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                const RateScreen(), // Ensure this screen exists
+                const RateScreen(), 
           ),
         );
         break;
 
       default:
-        // Do nothing for unhandled cases
+      
         return;
     }
   }
@@ -434,8 +434,8 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Image.asset(
-                  'assets/logo3.jpg', // Replace with your app logo path
-                  height: 150, // Adjust the height as per your requirement
+                  'assets/logo3.jpg',
+                  height: 150, 
                 ),
               ),
               // Buttons
